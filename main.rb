@@ -4,7 +4,8 @@ require 'rmagick'
 require 'net/http'
 
 SaveDir = '/tmp/'
-MaxSize = [ 5198, 5612 ]
+Messages = [ '😎', '🔭', '🔬', '👁️', '👀',
+           '🕵️‍♂️', '🕵🏼‍♀️', '🕵️​', ]
 
 def save_attachment filename, url
   File.write(filename, Net::HTTP.get(url))
@@ -41,7 +42,7 @@ enhance_bot.run do |bot, mention|
 
     # to fix work around an issue with elephrame 0.3.4<~
     files = modified_images.collect {|f| f }
-    bot.post("@#{mention.account.acct} 😎",
+    bot.post("@#{mention.account.acct} #{Messages.sample}",
              reply_id: mention.id,
              visibility: mention.visibility,
              hide_media: true,

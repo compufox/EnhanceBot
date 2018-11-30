@@ -1,4 +1,4 @@
-# Enchance Bot
+# Enhance Bot
 
 a mastodon bot
 

@@ -1,3 +1,4 @@
+# coding: utf-8
 require 'elephrame'
 require 'rmagick'
 require 'net/http'
@@ -9,7 +10,7 @@ def save_attachment filename, url
 end
 
 def enhance_image path
-  img = Magick::Image.read('/tmp/' + path).first
+  img = Magick::Image.read(path).first
 
   x, y = img.columns, img.rows
   offx, offy = rand(x), rand(y)
@@ -22,7 +23,7 @@ end
 enhance_bot = Elephrame::Bots::Reply.new
 
 enhance_bot.run do |bot, mention|
-  unless mention.media_attachments.empty?
+  unless mention.media_attachments.size.zero?
 
     modified_images = []
     
@@ -35,12 +36,15 @@ enhance_bot.run do |bot, mention|
       enhance_image modified_images[i]
     end
 
-    bot.post("@#{mention.account.acct} :sunglasses:",
+    # to fix work around an issue with elephrame 0.3.4<~
+    files = modified_images.collect {|f| f }
+    bot.post("@#{mention.account.acct} 😎",
+             reply_id: mention.id,
              visibility: mention.visibility,
              hide_media: true,
              media: modified_images)
 
-    File.delete(*modified_images)
+    File.delete(*files)
     
   end
 end

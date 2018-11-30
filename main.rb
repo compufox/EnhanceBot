@@ -14,7 +14,7 @@ def enhance_image path
   x, y = img.columns, img.rows
   offx, offy = rand(x), rand(y)
 
-  img.crop(offx, offy, (x - offx) * .7, (y - offy) * .7)
+  img.crop(offx, offy, (x - offx) * 0.7, (y - offy) * 0.7)
     .scale(rand(15) + 10)
     .write(path)
 end

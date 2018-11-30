@@ -4,6 +4,7 @@ require 'rmagick'
 require 'net/http'
 
 SaveDir = '/tmp/'
+MaxSize = [ 5198, 5612 ]
 
 def save_attachment filename, url
   File.write(filename, Net::HTTP.get(url))
@@ -12,9 +13,11 @@ end
 def enhance_image path
   img = Magick::Image.read(path).first
 
+  img.scale!(0.3)
+  
   x, y = img.columns, img.rows
   offx, offy = rand(x), rand(y)
-
+  
   img.crop(offx, offy, (x - offx) * 0.7, (y - offy) * 0.7)
     .scale(rand(15) + 10)
     .write(path)

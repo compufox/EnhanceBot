@@ -1,0 +1,52 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    addressable (2.5.2)
+      public_suffix (>= 2.0.2, < 4.0)
+    buftok (0.2.0)
+    domain_name (0.5.20180417)
+      unf (>= 0.0.5, < 1.0.0)
+    elephrame (0.3.2)
+      moostodon (~> 0.2.0)
+      rufus-scheduler
+    et-orbi (1.1.6)
+      tzinfo
+    fugit (1.1.6)
+      et-orbi (~> 1.1, >= 1.1.6)
+      raabro (~> 1.1)
+    http (3.3.0)
+      addressable (~> 2.3)
+      http-cookie (~> 1.0)
+      http-form_data (~> 2.0)
+      http_parser.rb (~> 0.6.0)
+    http-cookie (1.0.3)
+      domain_name (~> 0.5)
+    http-form_data (2.1.1)
+    http_parser.rb (0.6.0)
+    moostodon (0.2.0)
+      addressable (~> 2.5)
+      buftok (~> 0)
+      http (~> 3.0)
+      oj (~> 3.3)
+    oj (3.7.4)
+    public_suffix (3.0.3)
+    raabro (1.1.6)
+    rmagick (2.16.0)
+    rufus-scheduler (3.5.2)
+      fugit (~> 1.1, >= 1.1.5)
+    thread_safe (0.3.6)
+    tzinfo (1.2.5)
+      thread_safe (~> 0.1)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.5)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  elephrame (~> 0.3.2)
+  rmagick
+
+BUNDLED WITH
+   1.17.1

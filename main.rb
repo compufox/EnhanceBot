@@ -1,0 +1,3 @@
+require 'elephrame'
+require 'rmagick'
+

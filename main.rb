@@ -14,7 +14,7 @@ end
 def enhance_image path
   img = Magick::Image.read(path).first
 
-  img.scale!(0.3)
+  img.scale!(0.47)
   
   x, y = img.columns, img.rows
   offx, offy = rand(x), rand(y)

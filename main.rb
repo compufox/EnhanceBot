@@ -45,6 +45,7 @@ enhance_bot.run do |bot, mention|
              reply_id: mention.id,
              visibility: mention.visibility,
              hide_media: true,
+             spoiler: mention.spoiler_text,
              media: modified_images)
 
     File.delete(*files)

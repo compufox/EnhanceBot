@@ -6,7 +6,7 @@ GEM
     buftok (0.2.0)
     domain_name (0.5.20180417)
       unf (>= 0.0.5, < 1.0.0)
-    elephrame (0.3.4)
+    elephrame (0.4.1)
       moostodon (~> 0.2.0)
       rufus-scheduler
     et-orbi (1.1.6)
@@ -45,7 +45,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  elephrame (~> 0.3.4)
+  elephrame (~> 0.4.1)
   rmagick
 
 BUNDLED WITH

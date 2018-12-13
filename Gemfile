@@ -1,4 +1,4 @@
 source "https://rubygems.org"
 
-gem 'elephrame', '~> 0.3.4'
+gem 'elephrame', '~> 0.4.1'
 gem 'rmagick'

@@ -26,6 +26,7 @@ end
 
 enhance_bot = Elephrame::Bots::Reply.new
 
+enhance_bot.max_retries = 7
 enhance_bot.run do |bot, mention|
   unless mention.media_attachments.size.zero?
 
@@ -42,11 +43,8 @@ enhance_bot.run do |bot, mention|
 
     # to fix work around an issue with elephrame 0.3.4<~
     files = modified_images.collect {|f| f }
-    bot.post("@#{mention.account.acct} #{Messages.sample}",
-             reply_id: mention.id,
-             visibility: mention.visibility,
+    bot.reply("#{Messages.sample}",
              hide_media: true,
-             spoiler: mention.spoiler_text,
              media: modified_images)
 
     File.delete(*files)
